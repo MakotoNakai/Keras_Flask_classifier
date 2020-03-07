@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}判別結果:{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <p>{{result}}</p>
+  <img src="{{filepath}}">
+{% endblock %}
