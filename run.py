@@ -63,13 +63,13 @@ def predict():
                 img_nad = img_nad[None, ...]
 
                 with graph.as_default():
-                    label=["美人", "まあまあ"]
+                    label=["Beautiful", "normal"]
                     pred = model.predict(img_nad, batch_size=1, verbose=0)
                     pred_label = label[np.argmax(pred[0])]
-                    result = "この方は{}です。".format(pred_label)
+                    result = "She is {} for Makoto Nakai".format(pred_label)
         
             else:
-                result = "顔部分の識別に失敗しました。他の画像でやり直して下さい"
+                result = "Face detection failed. Please try another image"
             
             return render_template('result.html', result=result, filepath=filepath)
     return render_template('predict.html')
