@@ -15,7 +15,9 @@ tb._SYMBOLIC_SCOPE.value = True
 UPLOAD_FOLDER = './uploads'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
-HAAR_FILE = "./tools/haarcascade_frontalface_alt.xml"
+# HAAR_FILE = "./tools/haarcascade_frontalface_alt.xml"
+HAAR_FILE = "./tools/lbpcascade_frontalface.xml"
+
 cascade = cv2.CascadeClassifier(HAAR_FILE)
 size = 50
 
@@ -51,13 +53,10 @@ def predict():
             
             img = cv2.imread(filepath)
             
-            # グレースケールに変換する?
             img_g = cv2.imread(filepath,0)
             
-            # カスケード型分類器を使用して画像ファイルから顔部分を検出する
             face = cascade.detectMultiScale(img_g)
   
-            # 顔の座標を表示する
             if len(face) != 0:
 
                 for x,y,w,h in face:

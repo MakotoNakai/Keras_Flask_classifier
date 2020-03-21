@@ -2,6 +2,7 @@
 
  ## Requirement
  ```
+ flask == 1.1.1
  tensorflow == 2.1.0
  Keras == 2.3.1
  Numpy == 1.18.1
