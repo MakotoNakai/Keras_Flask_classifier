@@ -6,7 +6,6 @@
  Keras == 2.3.1
  Numpy == 1.18.1
  opencv == 4.1.0
- 
  ```
 
 ## How to use this app
