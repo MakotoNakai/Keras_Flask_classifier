@@ -68,10 +68,10 @@ def predict():
                 img_nad = img_nad[None, ...]
 
 #                 with graph.as_default():
-                label=["Beautiful", "normal"]
+                label=["is", "is not"]
                 pred = model.predict(img_nad, batch_size=1, verbose=0)
                 pred_label = label[np.argmax(pred[0])]
-                result = "She is {} for Makoto Nakai".format(pred_label)
+                result = "She {} Makoto Nakai's type".format(pred_label)
         
             else:
                 result = "Face detection failed. Please try another image"
