@@ -55,7 +55,11 @@ def predict():
             
             img_g = cv2.imread(filepath,0)
             
-            face = cascade.detectMultiScale(img_g)
+            face = cascade.detectMultiScale(img_g,
+                                            scaleFactor=1.05,
+                                            minNeighbors=3,
+                                            minSize=(30, 30),
+                                            maxSize = (1000,1000))
   
             if len(face) != 0:
 
